@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request
 import requests
 app=Flask(__name__)
-app.config['DEBUG']=True
 @app.route('/',methods=['POST','GET'])
 def index():
     if request.method=='POST':
@@ -23,3 +22,5 @@ def index():
             return "<h1>You entered Incorrect City Or You havent enterded any thing plz enter and try again</h1>"
     else:
         return render_template('index.html')
+if __name__=="__main__":
+    app.run(host='0.0.0.0', port=80)
